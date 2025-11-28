@@ -1,8 +1,48 @@
-
+# Airflow
 airflow-webserver.pid
 airflow.cfg
 webserver_config.py
-
-secrets.env
 dag_processor_manager
+airflow/logs/*
+airflow/.env
+*.log
+
+# Secrets and credentials
+secrets.env
+.env
+*.pem
+*.key
+
+# DBT
 profiles.yml
+airflow/dbt/logs/*
+airflow/dbt/target/*
+airflow/dbt/.user.yml
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Docker
+docker-compose.override.yml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+airflow/plugins/*
+!airflow/plugins/.gitkeep

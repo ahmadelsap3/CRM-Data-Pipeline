@@ -17,6 +17,8 @@
 ## Introduction 
 This project designed to ingest and transform data from multiple sources (CRM and ERP systems) into Snowflake. It follows the Medallion Architecture to structure data efficiently for analytics. The pipeline leverages dbt (Data Build Tool) to transform raw data into analytics-ready datasets, ensuring high-quality, governed, and optimized data models for reporting and business intelligence.
 
+
+
 ## Approach
 ```mermaid
 flowchart LR;
