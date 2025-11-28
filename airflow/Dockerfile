@@ -6,7 +6,6 @@ RUN pip install --upgrade pip \
 	&& pip install apache-airflow-providers-odbc \
 	&& pip install psycopg2-binary \
 	&& pip install gitpython \
-	&& pip install dbt-airflow \
 	&& pip install plyvel \
 	&& pip install --upgrade cmake \
 	&& pip install --upgrade pyarrow \
