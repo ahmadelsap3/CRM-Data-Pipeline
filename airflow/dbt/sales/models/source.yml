@@ -2,8 +2,8 @@ version: 2
 
 sources:
   - name: row_data
-    database: sales
-    schema: bronze_layer
+    database: SALES_DW
+    schema: RAW_DATA
     tables:
       - name: "crm_cust_info"
       - name: "crm_prd_info"

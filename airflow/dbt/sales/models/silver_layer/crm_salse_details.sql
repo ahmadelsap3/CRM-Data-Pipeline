@@ -1,14 +1,15 @@
 {{
     config(
         materialized='incremental',
-        unique_key='sls_ord_num',
-        indexes=[{"columns": ['sls_ord_num'], "unique": true}],
+        unique_key='s_key',
+        indexes=[{"columns": ['s_key'], "unique": true}],
         target_schema='silver'
     )
 }}
 
 with sales_cte as (
-    SELECT 
+    SELECT
+        CONCAT(sls_ord_num, '-', sls_prd_key) AS s_key,
         sls_ord_num AS order_number,
         sls_prd_key AS product_key,
         sls_cust_id AS Customer_id,

@@ -1,8 +1,8 @@
 {{
     config(
         materialized='incremental',
-        unique_key='prd_id',
-        indexes=[{"columns": ['prd_id'], "unique": true}],
+        unique_key='product_id',
+        indexes=[{"columns": ['product_id'], "unique": true}],
         target_schema='silver'
     )
 }}
@@ -22,7 +22,7 @@ with product_cte as (
             ELSE 'n/a'
         END AS product_line,
         CAST(p.prd_start_dt AS DATE) AS start_date,
-        CAST(LEAD(p.prd_start_dt) OVER (PARTITION BY p.prd_key ORDER BY p.prd_start_dt) - INTERVAL '1 DAY' AS DATE) AS end_date
+        CAST(CAST(LEAD(p.prd_start_dt) OVER (PARTITION BY p.prd_key ORDER BY p.prd_start_dt) AS DATE) - INTERVAL '1 DAY' AS DATE) AS end_date
     FROM {{ source('row_data', 'crm_prd_info') }} AS p
 )
 SELECT * FROM product_cte
