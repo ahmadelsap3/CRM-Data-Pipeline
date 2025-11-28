@@ -160,7 +160,7 @@ LIMIT 10;
    - Database: `SALES_DW`
    - Authentication: Username/Password
    - Username: `AHMEDELSAP3`
-   - Password: `[REDACTED]`
+   - Password: [YOUR_NEW_PASSWORD]
 
 3. **Load Tables:**
    - Navigate to GOLD schema
