@@ -16,8 +16,6 @@ RUN pip install --upgrade pip \
 
 
 USER root
-RUN sudo apt-get update
-RUN sudo apt-get install -y git
+RUN apt-get update && apt-get install -y git && apt-get clean
 
 USER airflow
-RUN airflow db migrate
