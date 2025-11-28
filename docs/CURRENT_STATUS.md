@@ -61,34 +61,16 @@ After running the SQL, you should see:
 
 ---
 
-### Step 2: Start the ELT Pipeline (10 minutes)
+### Step 2: Start the ELT Pipeline (Completed ✅)
 
-Once Snowflake is set up, run:
+The pipeline is now running!
 
-```bash
-cd /home/ahmed-elsaba/.gemini/antigravity/scratch/ELT-Engine/airflow
-./start.sh
-```
+**Access Airflow UI:**
+- URL: http://localhost:8080
+- Username: `admin`
+- Password: `admin`
 
-This script will:
-1. Set up environment variables
-2. Create necessary directories
-3. Build Docker images (~5 min first time)
-4. Initialize Airflow database
-5. Start all services (Airflow, PostgreSQL, Redis)
-
-**Expected Output:**
-```
-✅ Setup Complete!
-
-📊 Access Airflow Web UI at: http://localhost:8080
-   Username: admin
-   Password: admin
-```
-
----
-
-### Step 3: Run the Pipeline (30 minutes)
+### Step 3: Run the Pipeline (Now)
 
 1. **Open Airflow UI:**
    - Go to http://localhost:8080
