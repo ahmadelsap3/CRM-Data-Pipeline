@@ -17,7 +17,33 @@
 ## Introduction 
 This project designed to ingest and transform data from multiple sources (CRM and ERP systems) into Snowflake. It follows the Medallion Architecture to structure data efficiently for analytics. The pipeline leverages dbt (Data Build Tool) to transform raw data into analytics-ready datasets, ensuring high-quality, governed, and optimized data models for reporting and business intelligence.
 
+## Project Structure
 
+```
+CRM-Data-Pipeline/
+├── README.md                    # Project overview
+├── LICENSE                      # MIT License
+├── .gitignore                   # Git exclusions
+├── docs/                        # Documentation
+│   ├── QUICKSTART.md           # Quick start guide
+│   ├── SETUP_GUIDE.md          # Detailed setup instructions
+│   └── CURRENT_STATUS.md       # Project status and next steps
+├── scripts/                     # Setup and utility scripts
+│   ├── snowflake_setup.sql     # Snowflake database initialization
+│   ├── setup_snowflake.py      # Automated Snowflake setup
+│   └── setup_snowflake_instructions.sh
+└── airflow/                     # Airflow pipeline
+    ├── start.sh                # Quick start script
+    ├── docker-compose.yaml     # Docker services configuration
+    ├── Dockerfile              # Custom Airflow image
+    ├── dags/                   # Airflow DAGs
+    │   └── pipeline.py         # Main ELT pipeline
+    ├── dbt/                    # DBT project
+    │   └── sales/              # DBT models and transformations
+    └── Source/                 # Data sources
+        ├── source_crm/         # CRM data (CSV files)
+        └── source_erp/         # ERP data (CSV files)
+```
 
 ## Approach
 ```mermaid
@@ -218,25 +244,36 @@ erDiagram
 ### customers
 ![customers](https://github.com/user-attachments/assets/800d429c-6be6-48d4-9bef-fcadfaa637b5)
 
-For any queries, feel free to reach out! 
-# Project Team
-This project was developed by **Ahmed Elsaba** and **Karim Yasser** for the **EDA Subject at ITI**.
+## Quick Start
 
-## Contact Information
-### Ahmed Elsaba
-📧 Email: ahmed.elsaba@example.com  
-🔗 LinkedIn: [Ahmed Elsaba](https://www.linkedin.com/in/ahmed-elsaba/)
+1. **Setup Snowflake Database**
+   ```bash
+   # Run SQL commands in Snowflake (see scripts/snowflake_setup.sql)
+   ```
 
-### Karim Yasser
-� Email: karim.yasser@example.com  
-🔗 LinkedIn: [Karim Yasser](https://www.linkedin.com/in/karim-yasser/)
+2. **Start the Pipeline**
+   ```bash
+   cd airflow
+   ./start.sh
+   ```
 
-For any queries, feel free to reach out!
+3. **Access Airflow UI**
+   - URL: http://localhost:8080
+   - Username: `admin`
+   - Password: `admin`
 
+For detailed instructions, see [docs/SETUP_GUIDE.md](docs/SETUP_GUIDE.md)
 
+---
 
+## Project Team
 
+**Developed by:** Ahmed Elsaba & Karim Yasser  
+**Institution:** ITI (Information Technology Institute)  
+**Course:** EDA (Exploratory Data Analysis)
 
+---
 
+## License
 
-
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
