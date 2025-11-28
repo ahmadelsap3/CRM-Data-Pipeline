@@ -46,3 +46,4 @@ Thumbs.db
 # Project specific
 airflow/plugins/*
 !airflow/plugins/.gitkeep
+airflow/secrets.env
